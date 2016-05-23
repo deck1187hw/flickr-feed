@@ -2,10 +2,23 @@
 <h1>Flickr Feed <a href ng-click="getFeed();" title="Refresh feed"><i class="fa fa-refresh" aria-hidden="true"></i></a></h1>
 
 
+<div class="row search-flickr">
+  <div class="col-md-12">
+    <div class="input-group">
+      <input type="search" id="search" class="form-control" ng-model="search" placeholder="Search your photo">
+      <div class="input-group-addon">Found {{(photos.items | filter:search).length}} of {{photos.items.length}}</div>
+    </div>
+    <hr>
+
+  </div>
+</div>
+
+
+
 <div class="row list-flickr">
 
   <div class="col-md-12">
-    <div ng-repeat="photo in photos.items track by $index" class="row photo-row">
+    <div ng-repeat="photo in photos.items | filter:search track by $index" class="row photo-row">
 
       <div class="col-xs-12 col-md-3 col-container">
         <a href="#/photo/{{$index}}   "><img ng-src="{{photo.media.m}}" alt="{{photo.title}} by {{photo.author}}" class="" /></a>
