@@ -29,6 +29,7 @@ angular.module('flickrFeedApp')
           return photos[idx];
       };
 
+
     /*
      Gets all the list from flickr
      */
