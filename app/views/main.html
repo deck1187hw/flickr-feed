@@ -25,8 +25,8 @@
       </div>
       <div class="col-xs-12 col-md-9">
         <h3 class="title-photo"><a href="#/photo/{{$index}}   ">{{photo.title}}</a></h3>
-        Published: {{photo.date_taken| amDateFormat:'Do MMM YYYY'}} at {{photo.date_taken| amDateFormat:'hh:mm'}}
-        <div class="extra-info"><span class="author">by <a href="https://www.flickr.com/photos/{{photo.author_id}}" target="_blank">{{photo.author}}</a></span> on {{photo.date_taken}} <a ng-href="{{photo.link}}" target="_blank" class="viewFlickr">View on Flickr</a></div>
+
+        <div class="extra-info"><span class="author">by <a href="https://www.flickr.com/photos/{{photo.author_id}}" target="_blank">{{photo.author}}</a></span>  Published: {{photo.date_taken| amDateFormat:'Do MMM YYYY'}} at {{photo.date_taken| amDateFormat:'hh:mm'}} <a ng-href="{{photo.link}}" target="_blank" class="viewFlickr">View on Flickr</a></div>
       </div>
 
     </div>
