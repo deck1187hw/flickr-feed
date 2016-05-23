@@ -26,7 +26,6 @@ angular.module('flickrFeedApp')
 
       this.getPhoto = function(idx){
           var photos = localStorageService.get('flickrPhotos');
-          console.log(photos[idx]);
           return photos[idx];
       };
 
