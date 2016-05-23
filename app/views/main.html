@@ -1,18 +1,22 @@
-<div class="jumbotron">
-<h1>Flickr Feed</h1>
-</div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<h1>Flickr Feed <a href ng-click="getFeed();" title="Refresh feed"><i class="fa fa-refresh" aria-hidden="true"></i></a></h1>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<div class="row list-flickr">
+
+  <div class="col-md-12">
+    <div ng-repeat="photo in photos.items track by $index" class="row photo-row">
+
+      <div class="col-xs-12 col-md-3 col-container">
+        <a href="#/photo/{{$index}}   "><img ng-src="{{photo.media.m}}" alt="{{photo.title}} by {{photo.author}}" class="" /></a>
+      </div>
+      <div class="col-xs-12 col-md-9">
+        <h3 class="title-photo"><a href="#/photo/{{$index}}   ">{{photo.title}}</a></h3>
+        Published: {{photo.date_taken| amDateFormat:'Do MMM YYYY'}} at {{photo.date_taken| amDateFormat:'hh:mm'}}
+        <div class="extra-info"><span class="author">by <a href="https://www.flickr.com/photos/{{photo.author_id}}" target="_blank">{{photo.author}}</a></span> on {{photo.date_taken}} <a ng-href="{{photo.link}}" target="_blank" class="viewFlickr">View on Flickr</a></div>
+      </div>
+
+    </div>
+  </div>
+
 </div>

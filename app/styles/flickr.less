@@ -1,0 +1,80 @@
+@import "../../bower_components/bootstrap/less/bootstrap.less";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import "_variables.less";
+@import "_mixins.less";
+
+body{
+  background: @body-bg;
+  font-family: @font-opensans;
+}
+h1{
+  color:white;
+}
+.list-flickr{
+  .img-container{
+    width: 100px;
+    height: 200px;
+    overflow: hidden;
+  }
+  .extra-info{
+    padding-bottom: 20px  ;
+  }
+}
+.photo-row{
+  font-size: 120%;
+  background-color: darken(@color-dark1,20%);
+  .transition(background-color 0.5s ease);
+  color: white;
+  letter-spacing: 0.3px;
+
+  h3{
+    font-weight:bold;
+    color: darken(@color-dark1,40%);
+  }
+  .col-container{
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    height:140px;
+    img{
+      width: 100%;
+    }
+  }
+  &:hover{
+    background-color: darken(@color-dark1,25%);
+  }
+}
+
+.item-flickr{
+  background: white;
+  padding: 20px;
+  font-size: 140%;
+  a{
+    color:@color-dark3
+  }
+  .tag-title{
+    display: inline;
+    font-weight: bold;
+    font-size:160%;
+    color: darken(@color-dark2,20%);
+  }
+  .tags{
+    margin:0px;
+    padding: 10px;
+    background: @color-dark2;
+    li{
+      display: inline;
+      margin-right: 10px;
+      a{
+        color:white;
+      }
+    }
+  }
+  .credits{
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  h1{
+    color: black;
+  }
+}

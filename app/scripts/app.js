@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularMoment',
+    'LocalStorageModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -24,12 +26,16 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/photo/:photoId', {
+        templateUrl: 'views/photo.html',
+        controller: 'FlickrphotoCtrl',
+        controllerAs: 'photo'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+    .config(function (localStorageServiceProvider) {
+        localStorageServiceProvider
+            .setPrefix('flickrFeed');
+    });

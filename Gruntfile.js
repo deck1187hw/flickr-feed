@@ -10,6 +10,7 @@
 module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -43,7 +44,7 @@ module.exports = function (grunt) {
           cleancss: true
         },
         files: {
-          "app/styles/flickr.css": "app/styles/main.less"
+          'app/styles/flickr.css': 'app/styles/flickr.less'
         }
       }
     },
@@ -68,6 +69,8 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'postcss']
       },
+      files: '<%= yeoman.app %>/styles/*.less',
+      tasks: ['less'],
       gruntfile: {
         files: ['Gruntfile.js']
       },

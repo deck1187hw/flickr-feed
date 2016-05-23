@@ -8,10 +8,21 @@
  * Controller of the flickrFeedApp
  */
 angular.module('flickrFeedApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl',['$scope', 'flickrService',  function ($scope, flickrService) {
+
+    $scope.photos = null;
+
+    $scope.getFeed = function () {
+
+      flickrService.getFeedData()
+          .then(function (result) {
+            $scope.photos = result.data;
+          });
+    };
+    $scope.getFeed();
+
+
+
+  }]);
+
+
