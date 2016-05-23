@@ -8,4 +8,6 @@ Clone the repository
 
 Run "npm install" to install the dependencies
 
+Run "bower install" to install the packages
+
 Run `grunt` for building and `grunt serve` for preview.
